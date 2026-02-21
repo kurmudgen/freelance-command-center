@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Freelance Command Center
+
+A personal dashboard for managing freelance job boards, client pipelines, and target companies. All data persists in localStorage — no backend required.
+
+## Tech Stack
+
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Storage:** localStorage (client-side only)
+
+## Features
+
+- **Quick Stats** — At-a-glance metrics for active contracts and connect balance
+- **Job Boards Hub** — Track job board check-in frequency and status
+- **Pipeline Table** — Manage client proposals with status tracking (Submitted, Interviewing, Active, Waiting, Completed)
+- **Target Companies** — Maintain a list of target employers with salary ranges and contacts
+- **Inline Editing** — Edit all fields directly in the dashboard
+- **Persistent State** — All data saved to localStorage across sessions
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx            # Main dashboard
+│   └── globals.css         # Global styles
+├── components/
+│   ├── Nav.tsx             # Navigation bar
+│   ├── QuickStats.tsx      # Stats overview cards
+│   ├── JobBoardsHub.tsx    # Job board tracking grid
+│   ├── PipelineTable.tsx   # Client pipeline table
+│   ├── TargetCompanies.tsx # Target company list
+│   ├── EditableField.tsx   # Inline edit component
+│   ├── StatusBadge.tsx     # Status indicator badges
+│   └── StatusSelect.tsx    # Status dropdown selector
+└── lib/
+    ├── data.ts             # Default data and seed values
+    ├── hooks.ts            # Custom hooks (useLocalStorage)
+    └── types.ts            # TypeScript interfaces
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) to view the dashboard.
